@@ -24,7 +24,7 @@ Then return:
 - **C1** — Riverstone stores every completed job durably before reporting success.
 - **C2** — The retry worker attempts a failed job no more than three times.
 - **C3** — The production API currently enforces a 30-second request timeout.
-- **C4** — Every accepted job has a unique immutable job identifier.
+- **C4** — Every HTTP 202 acceptance response corresponds to a newly unique job identifier.
 - **C5** — The September incident was caused by database saturation.
 - **C6** — The service has automated monitoring for queue depth.
 - **C7** — The current deployment contains version 2.4.1 of the worker.
