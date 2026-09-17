@@ -1,0 +1,14 @@
+service: riverstone
+alerts:
+  - name: queue_depth_high
+    source: redis.queue_depth
+    condition: value > 500 for 5m
+    destination: oncall
+    enabled: true
+  - name: api_error_rate_high
+    source: http.5xx_rate
+    condition: value > 0.02 for 10m
+    destination: oncall
+    enabled: true
+known_gaps:
+  - postgres_connection_pool_saturation
