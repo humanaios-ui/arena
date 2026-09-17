@@ -70,6 +70,11 @@ Phase 0 is accepted only if all are true:
 4. Evaluations are performed with `EVALUATOR_RUBRIC_V0_1.md`.
 5. No boundary-violating governance instruction files are introduced.
 
+For telemetry consistency:
+
+- `phase0.eligible_for_metrics = true` only when the pair is uncontaminated and no falsifier is triggered.
+- `phase0.accepted = true` only when all Phase 0 acceptance criteria above are satisfied.
+
 ## 7) Reversibility
 
 This stage is reversible by design:
