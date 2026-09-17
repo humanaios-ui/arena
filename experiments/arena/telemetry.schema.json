@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://humanaios-ui.github.io/arena/experiments/arena/telemetry.schema.json",
+  "title": "COLLAB-PILOT-002 Telemetry",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "issue",
+    "branch",
+    "pull_request",
+    "pair_id",
+    "task_package_hash",
+    "conditions",
+    "contamination",
+    "falsifiers",
+    "phase0"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "issue": {
+      "type": "string",
+      "const": "#363"
+    },
+    "branch": {
+      "type": "string",
+      "const": "experiment/arena-pilot-002"
+    },
+    "pull_request": {
+      "type": "string",
+      "const": "#364"
+    },
+    "pair_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_package_hash": {
+      "type": "string",
+      "pattern": "^[a-fA-F0-9]{64}$"
+    },
+    "conditions": {
+      "type": "object",
+      "required": [
+        "humanaios",
+        "minimal_overlay"
+      ],
+      "properties": {
+        "humanaios": {
+          "$ref": "#/$defs/conditionRun"
+        },
+        "minimal_overlay": {
+          "$ref": "#/$defs/conditionRun"
+        }
+      },
+      "additionalProperties": false
+    },
+    "contamination": {
+      "type": "object",
+      "required": [
+        "contaminated",
+        "reasons"
+      ],
+      "properties": {
+        "contaminated": {
+          "type": "boolean"
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "falsifiers": {
+      "type": "object",
+      "required": [
+        "F1_reproducibility_break",
+        "F2_boundary_violation",
+        "F3_missing_telemetry",
+        "F4_asymmetric_execution"
+      ],
+      "properties": {
+        "F1_reproducibility_break": {
+          "type": "boolean"
+        },
+        "F2_boundary_violation": {
+          "type": "boolean"
+        },
+        "F3_missing_telemetry": {
+          "type": "boolean"
+        },
+        "F4_asymmetric_execution": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "phase0": {
+      "type": "object",
+      "required": [
+        "accepted",
+        "eligible_for_metrics"
+      ],
+      "properties": {
+        "accepted": {
+          "type": "boolean"
+        },
+        "eligible_for_metrics": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "conditionRun": {
+      "type": "object",
+      "required": [
+        "run_id",
+        "started_at",
+        "completed_at",
+        "result_hash",
+        "rubric_version"
+      ],
+      "properties": {
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "result_hash": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "rubric_version": {
+          "type": "string",
+          "const": "v0.1"
+        },
+        "notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
