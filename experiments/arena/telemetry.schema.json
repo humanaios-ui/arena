@@ -168,7 +168,7 @@
         "duration_seconds": {
           "type": "integer",
           "minimum": 0,
-          "description": "Execution duration in seconds. This must be computed from timestamps in the telemetry validation pipeline, which MUST reject records where completed_at < started_at."
+          "description": "Execution duration in seconds. Timestamp ordering (completed_at >= started_at) is enforced by the external telemetry validation pipeline, not by JSON Schema alone."
         },
         "result_hash": {
           "type": "string",

@@ -16,7 +16,7 @@ Use this template to register one paired run (HUMANAIOS + MINIMAL_OVERLAY) for i
 - Run ID:
 - Started at (UTC):
 - Completed at (UTC):
-- Duration (seconds, non-negative):
+- Duration (seconds, non-negative, derived from timestamps; `Completed at` MUST be >= `Started at`):
 - Result hash (sha256):
 - Rubric version: `v0.1`
 - Notes:
@@ -26,7 +26,7 @@ Use this template to register one paired run (HUMANAIOS + MINIMAL_OVERLAY) for i
 - Run ID:
 - Started at (UTC):
 - Completed at (UTC):
-- Duration (seconds, non-negative):
+- Duration (seconds, non-negative, derived from timestamps; `Completed at` MUST be >= `Started at`):
 - Result hash (sha256):
 - Rubric version: `v0.1`
 - Notes:
