@@ -1,0 +1,10 @@
+service: riverstone-worker
+release: 2.4.1
+retry:
+  max_attempts: 3
+  backoff_seconds: [2, 10]
+queue:
+  provider: redis
+  dead_letter_after_max_attempts: true
+notes:
+  - max_attempts counts the initial worker attempt plus retries.
