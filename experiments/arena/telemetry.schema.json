@@ -73,6 +73,31 @@
           }
         }
       },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "contaminated": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reasons": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "reasons": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ],
       "additionalProperties": false
     },
     "falsifiers": {
@@ -123,6 +148,7 @@
         "run_id",
         "started_at",
         "completed_at",
+        "duration_seconds",
         "result_hash",
         "rubric_version"
       ],
@@ -138,6 +164,11 @@
         "completed_at": {
           "type": "string",
           "format": "date-time"
+        },
+        "duration_seconds": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Execution duration in seconds. This must be computed from timestamps in the telemetry validation pipeline, which MUST reject records where completed_at < started_at."
         },
         "result_hash": {
           "type": "string",

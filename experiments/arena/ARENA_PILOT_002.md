@@ -46,7 +46,8 @@ Every paired run MUST emit a JSON record validating against `telemetry.schema.js
 - contamination signals,
 - falsifier outcomes,
 - Phase 0 acceptance flags,
-- cryptographic task/result hashes.
+- cryptographic task/result hashes,
+- per-condition non-negative duration derived from timestamps (`completed_at >= started_at` must hold).
 
 ## 5) Falsifiers
 

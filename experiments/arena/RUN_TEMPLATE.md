@@ -16,6 +16,7 @@ Use this template to register one paired run (HUMANAIOS + MINIMAL_OVERLAY) for i
 - Run ID:
 - Started at (UTC):
 - Completed at (UTC):
+- Duration (seconds, non-negative):
 - Result hash (sha256):
 - Rubric version: `v0.1`
 - Notes:
@@ -25,6 +26,7 @@ Use this template to register one paired run (HUMANAIOS + MINIMAL_OVERLAY) for i
 - Run ID:
 - Started at (UTC):
 - Completed at (UTC):
+- Duration (seconds, non-negative):
 - Result hash (sha256):
 - Rubric version: `v0.1`
 - Notes:
@@ -32,7 +34,8 @@ Use this template to register one paired run (HUMANAIOS + MINIMAL_OVERLAY) for i
 ## Contamination check
 
 - Contaminated: `true|false`
-- Reasons (if contaminated):
+- If `false`: reasons MUST be an empty list (`[]`)
+- If `true`: provide one or more reasons:
   - 
 
 ## Falsifiers
