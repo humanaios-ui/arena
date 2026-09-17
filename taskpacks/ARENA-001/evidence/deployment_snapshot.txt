@@ -1,0 +1,7 @@
+Riverstone production deployment snapshot
+captured_at: 2026-09-12T18:00:00Z
+api_release: 3.7.0
+worker_release_recorded: 2.4.1
+REQUEST_TIMEOUT_SECONDS=45
+
+Note: this snapshot is the latest deployment record in the supplied evidence bundle. It does not prove that no out-of-band deployment occurred after capture time.
